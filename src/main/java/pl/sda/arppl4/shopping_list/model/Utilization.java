@@ -2,6 +2,8 @@ package pl.sda.arppl4.shopping_list.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
+import pl.sda.arppl4.shopping_list.model.dto.CategoryDto;
+import pl.sda.arppl4.shopping_list.model.dto.UtilizationDto;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -28,5 +30,14 @@ public class Utilization {
     @ToString.Exclude
     @JsonBackReference
     private Product product;
+
+    public UtilizationDto mapToUtilizationDto() {
+        return new UtilizationDto(
+                id,
+                amount,
+                utilizationDate,
+                productName
+        );
+    }
 
 }

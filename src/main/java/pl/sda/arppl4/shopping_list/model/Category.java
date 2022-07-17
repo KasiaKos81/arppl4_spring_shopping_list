@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import pl.sda.arppl4.shopping_list.model.dto.CategoryDto;
+import pl.sda.arppl4.shopping_list.model.dto.ProductDto;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -27,4 +29,11 @@ public class Category {
     @EqualsAndHashCode.Exclude
     @JsonManagedReference
     private Set<Product> productSet;
+
+    public CategoryDto mapToCategoryDto() {
+        return new CategoryDto(
+                id,
+                name
+        );
+    }
 }
