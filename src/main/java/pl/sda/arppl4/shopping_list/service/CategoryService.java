@@ -2,6 +2,7 @@ package pl.sda.arppl4.shopping_list.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
 import pl.sda.arppl4.shopping_list.model.Category;
 import pl.sda.arppl4.shopping_list.model.Product;
